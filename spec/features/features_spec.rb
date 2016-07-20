@@ -12,6 +12,11 @@ feature "Hitpoints" do
     sign_in_and_play
     expect(page).to have_content 'Ben: 60HP'
   end
+  scenario "reducing player's hitpoints" do
+    sign_in_and_play
+    click_button "Attack"
+    expect(page).to have_content 'Ben: 50HP'
+  end
 end
 
 feature "Attack" do
